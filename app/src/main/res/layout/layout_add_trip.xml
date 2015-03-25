@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp"
+        android:text="Country:"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <Spinner
+        android:id="@+id/spCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:layout_toRightOf="@+id/tvCountry"/>
+
+    <TextView
+        android:id="@+id/tvState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp"
+        android:text="State/Province:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/tvCountry"/>
+
+    <TextView
+        android:id="@+id/tvCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp"
+        android:text="City:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/tvState"/>
+
+    <TextView
+        android:id="@+id/tvTransportation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp"
+        android:text="@string/transportation"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/tvCity"/>
+
+    <Spinner
+        android:id="@+id/spTransportation"
+        android:layout_toRightOf="@+id/tvTransportation"
+        android:layout_below="@+id/tvCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#0198E1"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/spTransportation"/>
+
+    <TextView
+        android:id="@+id/tvThings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp"
+        android:text="Things to bring"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/divider"
+        />
+
+    <LinearLayout
+        android:id="@+id/layoutThings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tvThings">
+
+        <EditText
+            android:id="@+id/etThing"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_below="@+id/tvThings"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_input_add"
+            android:layout_below="@+id/tvThings"
+            android:layout_toRightOf="@+id/etThing"/>
+
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_below="@+id/layoutThings"
+        android:layout_marginTop="30dp"
+        />
+        <!-- android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white" -->
+
+</RelativeLayout>
+</ScrollView>

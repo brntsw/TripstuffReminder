@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The theme applied to the application or activity -->
+    <style name="CustomActionBarTheme"
+           parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+        parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">#0198E1</item>
+        <item name="android:selectableItemBackground">@style/ActionButtonBackground</item>
+        <!-- Background Colors: #0EBFE9 -->
+    </style>
+
+    <!-- Background on touching the action bar button -->
+    <style name="ActionButtonBackground">
+        <item name="android:background">#ffffff</item>
+    </style>
+</resources>
