@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -21,8 +22,10 @@ import com.mit.bruno.tripstuffreminder.adapter.TripAdapter;
 import com.mit.bruno.tripstuffreminder.classes.Trip;
 import com.mit.bruno.tripstuffreminder.interfaces.IComponents;
 import com.mit.bruno.tripstuffreminder.sqlite.SQLiteHelper;
+import com.mit.bruno.tripstuffreminder.sqlite.TripSqlite;
 import com.mit.bruno.tripstuffreminder.utils.CustomFab;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +35,7 @@ import java.util.List;
 public class FragmentHome extends Fragment implements IComponents {
     View rootView;
 
-    private SQLiteHelper sqLiteHelper;
+    private TripSqlite tripSqlite;
     private ListView listTrips;
     private CustomFab customFab;
 
@@ -40,6 +43,8 @@ public class FragmentHome extends Fragment implements IComponents {
         rootView = inflater.inflate(R.layout.home, container, false);
 
         initializeComponents();
+
+        tripSqlite.open();
 
         registerForContextMenu(listTrips);
 
@@ -104,6 +109,12 @@ public class FragmentHome extends Fragment implements IComponents {
         });
     }
 
+    public void onDestroy(){
+        super.onDestroy();
+
+        tripSqlite.close();
+    }
+
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.setHeaderTitle("Select");
@@ -144,7 +155,7 @@ public class FragmentHome extends Fragment implements IComponents {
 
     @Override
     public void initializeComponents() {
-        sqLiteHelper = new SQLiteHelper(getActivity());
+        tripSqlite = new TripSqlite(getActivity());
         listTrips = (ListView) rootView.findViewById(R.id.listTrips);
         customFab = (CustomFab) rootView.findViewById(R.id.customFabAdd);
     }

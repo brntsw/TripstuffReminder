@@ -29,14 +29,14 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     //Creation SQL query
     private static final String TABLE_TRIP_CREATE = "CREATE TABLE " + TABLE_TRIP + " (" +
-            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            COLUMN_ID + " INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL, " +
             COLUMN_TRIP_COUNTRY + " VARCHAR(100) NOT NULL, " +
             COLUMN_TRIP_STATE + " VARCHAR(100)," +
             COLUMN_TRIP_CITY + " VARCHAR(100) NOT NULL," +
-            COLUMN_TRIP_ADDRESS + "TEXT," +
-            COLUMN_TRIP_TRANSPORTATION + "VARCHAR(50)," +
-            COLUMN_TRIP_DEPARTURE_DATETIME + "VARCHAR(25)," +
-            COLUMN_TRIP_ARRIVAL_DATETIME + "VARCHAR(25));";
+            COLUMN_TRIP_ADDRESS + " TEXT," +
+            COLUMN_TRIP_TRANSPORTATION + " VARCHAR(50) NOT NULL," +
+            COLUMN_TRIP_DEPARTURE_DATETIME + " VARCHAR(25)," +
+            COLUMN_TRIP_ARRIVAL_DATETIME + " VARCHAR(25));";
 
     /* ----------------------------------------------------------------------------------- */
 
@@ -48,8 +48,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     //Creation SQL query
     private static final String TABLE_TRIP_ITEMS_CREATE = "CREATE TABLE " + TABLE_TRIP_ITEMS + " (" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-            COLUMN_ID_TRIP + " INTEGER, " +
-            COLUMN_TRIP_ITEMS_NAME + " TEXT);";
+            COLUMN_ID_TRIP + " INTEGER NOT NULL, " +
+            COLUMN_TRIP_ITEMS_NAME + " TEXT, " +
+            "FOREIGN KEY(" + COLUMN_ID_TRIP + ") REFERENCES " + TABLE_TRIP + "(" + COLUMN_ID + "));";
 
     /* --------------------------------------------------------------------------------------------- */
 
@@ -58,15 +59,16 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String TABLE_TRIP_THINGS_TO_DO = "trip_things_to_do";
     public static final String COLUMN_TRIP_THINGS_TO_DO_THING = "thing";
     public static final String COLUMN_TRIP_THINGS_TO_DO_DESCRIPTION = "description";
-    public static final String COLUMN_TRIP_THINGS_TO_DO_DATETIME = "date";
+    public static final String COLUMN_TRIP_THINGS_TO_DO_DATETIME = "date_to_do";
 
     //Creation SQL query
     private static final String TABLE_TRIP_THINGS_TO_DO_CREATE = "CREATE TABLE " + TABLE_TRIP_THINGS_TO_DO + " (" +
-            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            COLUMN_ID + " INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL, " +
             COLUMN_ID_TRIP + " INTEGER, " +
             COLUMN_TRIP_THINGS_TO_DO_THING + " TEXT, " +
             COLUMN_TRIP_THINGS_TO_DO_DESCRIPTION + " TEXT, " +
-            COLUMN_TRIP_THINGS_TO_DO_DATETIME + " VARCHAR(25));";
+            COLUMN_TRIP_THINGS_TO_DO_DATETIME + " VARCHAR(25), " +
+            "FOREIGN KEY(" + COLUMN_ID_TRIP + ") REFERENCES " + TABLE_TRIP + "(" + COLUMN_ID + "));";
 
     /* ----------------------------------------------------------------------------------------------- */
 

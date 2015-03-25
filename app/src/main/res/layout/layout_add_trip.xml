@@ -6,90 +6,147 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvCountry"
+    <LinearLayout
+        android:id="@+id/linearCountry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="25dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="5dp"
-        android:text="Country:"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+        android:orientation="horizontal">
 
-    <Spinner
-        android:id="@+id/spCountry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="25dp"
-        android:layout_toRightOf="@+id/tvCountry"/>
+        <TextView
+            android:id="@+id/tvCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="25dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="5dp"
+            android:text="Country:"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <TextView
-        android:id="@+id/tvState"
+        <Spinner
+            android:id="@+id/spCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="25dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="5dp"
-        android:text="State/Province:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/tvCountry"/>
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearCountry">
 
-    <TextView
-        android:id="@+id/tvCity"
+        <TextView
+            android:id="@+id/tvState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="5dp"
+            android:text="State/Province:"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <Spinner
+            android:id="@+id/spState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvState"
+            android:prompt="@string/select"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="5dp"
-        android:text="City:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/tvState"/>
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearState">
 
-    <TextView
-        android:id="@+id/tvTransportation"
+        <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="5dp"
+            android:text="City:"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <Spinner
+            android:id="@+id/spCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvCity"
+            android:prompt="@string/select"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearTransportation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="5dp"
-        android:text="@string/transportation"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/tvCity"/>
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearCity">
 
-    <Spinner
-        android:id="@+id/spTransportation"
-        android:layout_toRightOf="@+id/tvTransportation"
-        android:layout_below="@+id/tvCity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="15dp"/>
+        <TextView
+            android:id="@+id/tvTransportation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="5dp"
+            android:text="@string/transportation"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#0198E1"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/spTransportation"/>
+        <Spinner
+            android:id="@+id/spTransportation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"/>
 
-    <TextView
-        android:id="@+id/tvThings"
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearDivider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="5dp"
-        android:text="Things to bring"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_below="@+id/divider"
-        />
+        android:layout_below="@+id/linearTransportation">
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#0198E1"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearThings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearDivider">
+
+        <TextView
+            android:id="@+id/tvThings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="5dp"
+            android:text="Things to bring"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layoutThings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/tvThings">
+        android:layout_below="@+id/linearThings">
 
         <EditText
             android:id="@+id/etThing"
