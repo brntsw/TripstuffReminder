@@ -15,10 +15,8 @@ public class TripSqlite {
             SQLiteHelper.COLUMN_TRIP_CITY,
             SQLiteHelper.COLUMN_TRIP_ADDRESS,
             SQLiteHelper.COLUMN_TRIP_TRANSPORTATION,
-            SQLiteHelper.COLUMN_TRIP_DEPARTURE_DATE,
-            SQLiteHelper.COLUMN_TRIP_ARRIVAL_DATE,
-            SQLiteHelper.COLUMN_TRIP_DEPARTURE_TIME,
-            SQLiteHelper.COLUMN_TRIP_ARRIVAL_TIME};
+            SQLiteHelper.COLUMN_TRIP_DEPARTURE_DATETIME,
+            SQLiteHelper.COLUMN_TRIP_ARRIVAL_DATETIME};
 
     public TripSqlite(Context context){
         helper = new SQLiteHelper(context);

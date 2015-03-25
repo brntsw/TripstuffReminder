@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Created by techresult on 24/03/2015.
  */
-public class fragment_home extends Fragment implements IComponents {
+public class FragmentHome extends Fragment implements IComponents {
     View rootView;
 
     private SQLiteHelper sqLiteHelper;

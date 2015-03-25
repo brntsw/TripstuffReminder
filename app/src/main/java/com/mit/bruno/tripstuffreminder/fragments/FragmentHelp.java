@@ -8,26 +8,16 @@ import android.view.ViewGroup;
 
 import com.mit.bruno.tripstuffreminder.R;
 import com.mit.bruno.tripstuffreminder.interfaces.IComponents;
-import com.mit.bruno.tripstuffreminder.sqlite.SQLiteHelper;
 
 /**
  * Created by techresult on 24/03/2015.
  */
-public class fragment_configuration extends Fragment implements IComponents {
+public class FragmentHelp extends Fragment {
     View rootView;
 
-    private SQLiteHelper sqLiteHelper;
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        rootView = inflater.inflate(R.layout.configuration, container, false);
-
-        initializeComponents();
+        rootView = inflater.inflate(R.layout.help, container, false);
 
         return rootView;
-    }
-
-    @Override
-    public void initializeComponents() {
-        sqLiteHelper = new SQLiteHelper(getActivity());
     }
 }
