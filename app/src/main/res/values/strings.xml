@@ -7,7 +7,28 @@
     <string name="search">Search</string>
     <string name="transportation">Transportation:</string>
     <string name="save">Save</string>
+    <string name="btn_add_thing_description">Add thing to bring</string>
+    <string name="btn_add_to_do_description">Add thing to do</string>
+    <string name="things_to_bring">Type something to be brought&#8230;</string>
+    <string name="things_to_do">Type some activity to be done&#8230;</string>
+    <string name="know_state">Do you know the state/province?</string>
+    <string name="country">Country:</string>
+    <string name="state_province">State/Province:</string>
+    <string name="city">City:</string>
+    <string name="things_bring">Things to bring</string>
+    <string name="things_do">Things to do</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
+    <!-- IDs resources -->
+    <item name="linearLayoutBringId" type="id">100</item>
+    <item name="linearLayoutToDoId" type="id">500</item>
+    <item name="editTextBringId" type="id">1000</item>
+    <item name="editTextToDoId" type="id">1500</item>
+    <item name="btnBringId" type="id">2000</item>
+    <item name="btnToDoId" type="id">2500</item>
+
+    <!-- MENU -->
     <string name="home">Home</string>
     <string name="config">Configuration</string>
     <string name="help">Help</string>
@@ -17,6 +38,7 @@
 
     <string name="select">Select</string>
 
+    <!-- SPINNER COUNTRIES -->
     <string-array name="countries">
         <item>Select</item>
         <item>Afghanistan</item>

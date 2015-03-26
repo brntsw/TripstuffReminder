@@ -19,7 +19,7 @@
             android:paddingTop="25dp"
             android:paddingLeft="8dp"
             android:paddingRight="5dp"
-            android:text="Country:"
+            android:text="@string/country"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <Spinner
@@ -29,13 +29,54 @@
             android:paddingTop="25dp"/>
 
     </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/linearKnowState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/linearCountry"
+        android:paddingTop="20dp">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="5dp"
+            android:text="@string/know_state"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <RadioGroup
+            android:id="@+id/radioKnowState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:paddingRight="10dp"/>
+
+            <RadioButton
+                android:id="@+id/radioNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+        
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/linearCountry">
+        android:layout_below="@+id/linearKnowState"
+        android:paddingTop="10dp"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/tvState"
@@ -44,7 +85,7 @@
             android:paddingTop="20dp"
             android:paddingLeft="8dp"
             android:paddingRight="5dp"
-            android:text="State/Province:"
+            android:text="@string/state_province"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <Spinner
@@ -61,7 +102,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/linearState">
+        android:layout_below="@+id/linearState"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/tvCity"
@@ -70,7 +112,7 @@
             android:paddingTop="20dp"
             android:paddingLeft="8dp"
             android:paddingRight="5dp"
-            android:text="City:"
+            android:text="@string/city"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <Spinner
@@ -87,7 +129,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/linearCity">
+        android:layout_below="@+id/linearCity"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/tvTransportation"
@@ -111,7 +154,9 @@
         android:id="@+id/linearDivider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearTransportation">
+        android:layout_below="@+id/linearTransportation"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
         <View
             android:id="@+id/divider"
@@ -135,7 +180,7 @@
             android:paddingTop="20dp"
             android:paddingLeft="8dp"
             android:paddingRight="5dp"
-            android:text="Things to bring"
+            android:text="@string/things_bring"
             android:textAppearance="?android:attr/textAppearanceLarge"
             />
 
@@ -145,34 +190,86 @@
         android:id="@+id/layoutThings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_below="@+id/linearThings">
 
+        <LinearLayout
+            android:id="@+id/wrapThings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/etThing"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:hint="@string/things_to_bring"/>
+
+            <ImageButton
+                android:id="@+id/btnAddBring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_input_add"
+                android:contentDescription="@string/btn_add_thing_description"/>
+        </LinearLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearThingsToDo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutThings">
+
+        <TextView
+            android:id="@+id/tvThingsToDo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="5dp"
+            android:text="@string/things_do"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutThingsToDo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearThingsToDo">
+
         <EditText
-            android:id="@+id/etThing"
+            android:id="@+id/etThingToDo"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_below="@+id/tvThings"/>
+            android:hint="@string/things_to_do"/>
 
         <ImageButton
+            android:id="@+id/btnAddToDo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_input_add"
-            android:layout_below="@+id/tvThings"
-            android:layout_toRightOf="@+id/etThing"/>
+            android:layout_toRightOf="@+id/etThingToDo"
+            android:contentDescription="@string/btn_add_to_do_description"/>
 
-        </LinearLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/save"
-        android:layout_below="@+id/layoutThings"
+        android:layout_below="@+id/layoutThingsToDo"
         android:layout_marginTop="30dp"
         />
         <!-- android:background="@android:color/holo_blue_dark"
